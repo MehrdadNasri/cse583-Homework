@@ -41,7 +41,7 @@ print("Number of missing time points:", missing_rows.sum())
 # We have 1 time point with missing bike count data in 2016. I am removing that time point because missing data does not mean that no cyclists crossed the bridge at that time, so we cannot replace taht with 0 or any other value. 
 data_subset = data_subset.dropna()
 
-#Step6: Plot the coutssby hour
+#Step6: Plot the counts by hour
 counts_by_hour = data_subset.groupby('Hour')['Total'].sum()
 counts_by_hour.plot(kind='bar')
 plt.title('Total Cyclist Counts Crossing by Hour - Fremont Bridge, 2016')
